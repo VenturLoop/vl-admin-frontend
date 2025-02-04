@@ -17,7 +17,7 @@ const UsersTable = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("https://backendv3-wmen.onrender.com/api/users");
+        const response = await axios.get("https://api.venturloop.com/api/users");
         const data = Array.isArray(response.data.data) ? response.data.data : [];
         setUsers(data);
         setFilteredUsers(data);
@@ -47,7 +47,7 @@ const UsersTable = () => {
     if (userToDelete) {
       console.log("Deleting user with ID:", userToDelete._id); // Log the user ID
       try {
-        await axios.delete(`https://backendv3-wmen.onrender.com/api/users/${userToDelete._id}`);
+        await axios.delete(`https://api.venturloop.com/api/users/${userToDelete._id}`);
         setUsers(users.filter(user => user._id !== userToDelete._id));
         setFilteredUsers(filteredUsers.filter(user => user._id !== userToDelete._id));
       } catch (error) {
