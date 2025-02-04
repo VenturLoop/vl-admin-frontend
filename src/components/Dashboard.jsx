@@ -3,43 +3,43 @@ import axios from "axios";
 import PageLoader from "./PageLoder";
 
 const Dashboard = () => {
-  const [totalUsers, setTotalUsers] = useState(null);
-  // const [premiumUsers, setPremiumUsers] = useState(null);
-  const [investorCount, setInvestorCount] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  // const [totalUsers, setTotalUsers] = useState(null);
+  // // const [premiumUsers, setPremiumUsers] = useState(null);
+  // const [investorCount, setInvestorCount] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState("");
 
-  useEffect(() => {
-    const fetchCounts = async () => {
-      try {
-        const [usersResponse, premiumResponse, investorResponse] = await Promise.all([
-          axios.get("https://api.venturloop.com/api//users/count"),
-          // axios.get("https://api.venturloop.com/api/premium/count"),
-          axios.get("https://api.venturloop.com/api/investor-count"),
-        ]);
+  // useEffect(() => {
+  //   const fetchCounts = async () => {
+  //     try {
+  //       const [usersResponse, premiumResponse, investorResponse] = await Promise.all([
+  //         axios.get("https://api.venturloop.com/api//users/count"),
+  //         // axios.get("https://api.venturloop.com/api/premium/count"),
+  //         axios.get("https://api.venturloop.com/api/investor-count"),
+  //       ]);
 
-        setTotalUsers(usersResponse.data.count || 0);
-        // setPremiumUsers(premiumResponse.data.count || 0);
-        setInvestorCount(investorResponse.data.count || 0);
-        setError("");
-      } catch (err) {
-        console.error("Error fetching counts:", err);
-        setError("Failed to load dashboard data. Please try again.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       setTotalUsers(usersResponse.data.count || 0);
+  //       // setPremiumUsers(premiumResponse.data.count || 0);
+  //       setInvestorCount(investorResponse.data.count || 0);
+  //       setError("");
+  //     } catch (err) {
+  //       console.error("Error fetching counts:", err);
+  //       setError("Failed to load dashboard data. Please try again.");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchCounts();
-  }, []);
+  //   fetchCounts();
+  // }, []);
 
-  if (loading) {
-    return <PageLoader/>
-  }
+  // if (loading) {
+  //   return <PageLoader/>
+  // }
 
-  if (error) {
-    return <div className="text-center text-red-500 mt-4">{error}</div>;
-  }
+  // if (error) {
+  //   return <div className="text-center text-red-500 mt-4">{error}</div>;
+  // }
 
   return (
     <>
