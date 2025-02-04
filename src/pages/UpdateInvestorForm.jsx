@@ -40,7 +40,7 @@ const EditInvestorPage = () => {
     const fetchInvestorData = async () => {
       try {
         const response = await axios.get(
-          `https://backendv3-wmen.onrender.com/api/get-investor/${id}`
+          `https://api.venturloop.com/api/get-investor/${id}`
         );
         const data = response.data;
 
@@ -94,7 +94,7 @@ const EditInvestorPage = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        `https://backendv3-wmen.onrender.com/api/update-investor/${id}`,
+        `https://api.venturloop.com/api/update-investor/${id}`,
         formData
       );
 
@@ -206,7 +206,7 @@ const EditInvestorPage = () => {
     try {
       setImageLoading(true);
       const response = await axios.post(
-        "https://backendv3-wmen.onrender.com/api/fileUpload",
+        "https://api.venturloop.com/api/fileUpload",
         imageFormData
       );
 
