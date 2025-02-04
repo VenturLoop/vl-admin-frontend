@@ -14,7 +14,7 @@ const InvestorProfile = () => {
     const fetchInvestor = async () => {
       try {
         const response = await axios.get(
-          `https://backendv3-wmen.onrender.com/api/get-investor/${id}`
+          `https://api.venturloop.com/api/get-investor/${id}`
         );
         console.log(response.data);
         setInvestor(response.data);
