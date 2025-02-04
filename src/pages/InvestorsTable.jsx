@@ -16,7 +16,7 @@ const InvestorsTable = () => {
     const fetchInvestors = async () => {
       try {
         const response = await axios.get(
-          "https://backendv3-wmen.onrender.com/api/get-investors"
+          "https://api.venturloop.com/api/get-investors"
         );
         const data = Array.isArray(response.data) ? response.data : response.data.investors || [];
         setInvestors(data);
@@ -40,7 +40,7 @@ const InvestorsTable = () => {
     if (profileName === currentInvestor.name) {
       try {
         await axios.delete(
-          `https://backendv3-wmen.onrender.com/api/delete-investor/${currentInvestor._id}`
+          `https://api.venturloop.com/api/delete-investor/${currentInvestor._id}`
         );
         setInvestors(investors.filter((inv) => inv._id !== currentInvestor._id));
         alert("Investor deleted successfully!");
