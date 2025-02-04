@@ -13,9 +13,9 @@ const Dashboard = () => {
     const fetchCounts = async () => {
       try {
         const [usersResponse, premiumResponse, investorResponse] = await Promise.all([
-          axios.get("https://backendv3-wmen.onrender.com/api//users/count"),
-          axios.get("https://backendv3-wmen.onrender.com/api/premium/count"),
-          axios.get("https://backendv3-wmen.onrender.com/api/investor-count"),
+          axios.get("https://api.venturloop.com/api//users/count"),
+          axios.get("https://api.venturloop.com/api/premium/count"),
+          axios.get("https://api.venturloop.com/api/investor-count"),
         ]);
 
         setTotalUsers(usersResponse.data.count || 0);
