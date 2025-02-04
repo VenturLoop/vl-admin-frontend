@@ -100,7 +100,7 @@ const InvestorForm = () => {
       console.log("Form Data:", formData); // Log form data
 
       const response = await axios.post(
-        "https://venturloop-backend-v-20.onrender.com/api/create-investor",
+        "https://api.venturloop.com/api/create-investor",
         formData
       );
 
@@ -166,7 +166,7 @@ const InvestorForm = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://backendv3-wmen.onrender.com/api/fileUpload",
+        "https://api.venturloop.com/api/fileUpload",
         imageFormData
       );
 
