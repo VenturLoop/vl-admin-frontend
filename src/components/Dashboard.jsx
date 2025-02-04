@@ -4,7 +4,7 @@ import PageLoader from "./PageLoder";
 
 const Dashboard = () => {
   const [totalUsers, setTotalUsers] = useState(null);
-  const [premiumUsers, setPremiumUsers] = useState(null);
+  // const [premiumUsers, setPremiumUsers] = useState(null);
   const [investorCount, setInvestorCount] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -14,12 +14,12 @@ const Dashboard = () => {
       try {
         const [usersResponse, premiumResponse, investorResponse] = await Promise.all([
           axios.get("https://api.venturloop.com/api//users/count"),
-          axios.get("https://api.venturloop.com/api/premium/count"),
+          // axios.get("https://api.venturloop.com/api/premium/count"),
           axios.get("https://api.venturloop.com/api/investor-count"),
         ]);
 
         setTotalUsers(usersResponse.data.count || 0);
-        setPremiumUsers(premiumResponse.data.count || 0);
+        // setPremiumUsers(premiumResponse.data.count || 0);
         setInvestorCount(investorResponse.data.count || 0);
         setError("");
       } catch (err) {
