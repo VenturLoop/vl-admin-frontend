@@ -11,7 +11,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://backendv3-wmen.onrender.com/api/users/${id}`);
+        const response = await axios.get(`https://api.venturloop.com/api/users/${id}`);
         setUser(response.data.data[0]); // Assuming the user data is in the `data[0]` array
       } catch (err) {
         setError('Error fetching user details.');
