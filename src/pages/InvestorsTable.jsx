@@ -16,7 +16,7 @@ const InvestorsTable = () => {
     const fetchInvestors = async () => {
       try {
         const response = await axios.get(
-          "https://api.venturloop.com/api/get-investors"
+          "https://api.venturloop.com/api/get-investors-from-admin"
         );
         const data = Array.isArray(response.data) ? response.data : response.data.data || [];
         setInvestors(data);
